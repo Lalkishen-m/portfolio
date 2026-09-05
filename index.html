@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lalkishen M — Product Manager</title>
+  <meta name="description" content="Lalkishen M — Product Manager & Agentic AI Specialist at ICICI Bank.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --purple: #86589d;
+      --purple-light: #f5f0f8;
+      --purple-deep: #6b4480;
+      --ink: #111111;
+      --muted: #666666;
+      --border: #e8e8e8;
+      --green: #27ae60;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', -apple-system, sans-serif;
+      background: #fff;
+      color: var(--ink);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { text-decoration: none; color: inherit; }
+
+    /* ── NAV ── */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.8rem 5%;
+      max-width: 1300px;
+      margin: 0 auto;
+      position: sticky;
+      top: 0;
+      background: rgba(255,255,255,0.97);
+      backdrop-filter: blur(8px);
+      z-index: 99;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.2s;
+    }
+    nav.scrolled { border-color: var(--border); }
+
+    .logo {
+      font-size: 1.2rem;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+    }
+    .logo .l1 { color: var(--purple); }
+    .logo .l2 { color: var(--ink); }
+
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 2.5rem;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+    .nav-links a {
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--muted);
+      transition: color 0.15s;
+      position: relative;
+    }
+    .nav-links a:hover,
+    .nav-links a.active { color: var(--ink); }
+    .nav-links a.active::after {
+      content: '';
+      position: absolute;
+      bottom: -3px;
+      left: 0; right: 0;
+      height: 1px;
+      background: var(--ink);
+    }
+
+    .btn-resume {
+      background: var(--ink);
+      color: #fff;
+      padding: 0.75rem 1.5rem;
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      transition: background 0.2s;
+    }
+    .btn-resume:hover { background: var(--purple); }
+
+    /* ── HERO ── */
+    .hero {
+      display: flex;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 5rem 5% 6rem;
+      gap: 6rem;
+      align-items: center;
+    }
+
+    .hero-image {
+      flex: 0 0 38%;
+      position: relative;
+    }
+    .hero-image::before {
+      content: '';
+      position: absolute;
+      top: 20px;
+      left: -20px;
+      right: 20px;
+      bottom: -20px;
+      background: var(--purple-light);
+      z-index: 0;
+    }
+    .hero-image img {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      height: 580px;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+    }
+
+    .hero-content { flex: 1; }
+
+    .hero-content h1 {
+      font-family: 'DM Serif Display', Georgia, serif;
+      font-size: clamp(2.4rem, 4vw, 3.4rem);
+      line-height: 1.2;
+      font-weight: 400;
+      margin-bottom: 2rem;
+      color: var(--ink);
+    }
+    .hero-content h1 em {
+      font-style: italic;
+      color: var(--purple);
+    }
+
+    .status {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 2.5rem;
+      color: var(--muted);
+    }
+    .status-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--green);
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.4; }
+    }
+    .status span { color: var(--green); }
+
+    .cta-group {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 1rem 2rem;
+      font-size: 0.9rem;
+      font-weight: 600;
+      font-family: 'DM Sans', sans-serif;
+      letter-spacing: 0.02em;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.2s;
+      cursor: pointer;
+      border: none;
+    }
+    .btn-primary {
+      background: var(--ink);
+      color: #fff;
+    }
+    .btn-primary:hover { background: var(--purple); }
+    .btn-outline {
+      background: transparent;
+      color: var(--ink);
+      border: 1.5px solid var(--ink);
+    }
+    .btn-outline:hover { background: var(--ink); color: #fff; }
+
+    /* ── SECTION SHELL ── */
+    .section {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 6rem 5%;
+    }
+    .section-border {
+      border-top: 1px solid var(--border);
+    }
+
+    .eyebrow {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--purple);
+      margin-bottom: 1rem;
+    }
+    .section-heading {
+      font-family: 'DM Serif Display', Georgia, serif;
+      font-size: clamp(2rem, 3.5vw, 2.8rem);
+      font-weight: 400;
+      line-height: 1.2;
+      margin-bottom: 3.5rem;
+      color: var(--ink);
+    }
+
+    /* ── PROJECTS ── */
+    .project {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+      padding: 3.5rem 0;
+      border-top: 1px solid var(--border);
+    }
+    .project:last-child { border-bottom: 1px solid var(--border); }
+    .project.reverse { direction: rtl; }
+    .project.reverse > * { direction: ltr; }
+
+    .project-img {
+      aspect-ratio: 4/3;
+      overflow: hidden;
+      background: var(--purple-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 64px;
+    }
+    .project-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+    .project:hover .project-img img { transform: scale(1.03); }
+
+    .project-meta .num {
+      font-family: 'DM Serif Display', serif;
+      font-size: 4rem;
+      color: var(--purple-light);
+      line-height: 1;
+      margin-bottom: 0.5rem;
+      -webkit-text-stroke: 1px var(--purple);
+      color: transparent;
+    }
+    .project-meta .type {
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--purple);
+      margin-bottom: 0.75rem;
+    }
+    .project-meta h3 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.8rem;
+      font-weight: 400;
+      line-height: 1.25;
+      margin-bottom: 1rem;
+    }
+    .project-meta p {
+      font-size: 0.95rem;
+      color: var(--muted);
+      line-height: 1.8;
+      margin-bottom: 1.5rem;
+      max-width: 44ch;
+    }
+    .project-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 1.5rem;
+    }
+    .tag {
+      font-size: 0.75rem;
+      padding: 4px 12px;
+      border-radius: 2px;
+      background: var(--purple-light);
+      color: var(--purple-deep);
+      font-weight: 500;
+    }
+    .project-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--ink);
+      border-bottom: 1.5px solid var(--border);
+      padding-bottom: 2px;
+      transition: color 0.15s, border-color 0.15s;
+    }
+    .project-cta:hover { color: var(--purple); border-color: var(--purple); }
+    .project-cta.dim { color: var(--muted); cursor: default; }
+
+    /* ── ABOUT ── */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: start;
+    }
+    .about-text p {
+      font-size: 1rem;
+      color: var(--muted);
+      line-height: 1.85;
+      margin-bottom: 1.25rem;
+    }
+    .about-text p:last-child { margin-bottom: 0; }
+    .about-text strong { color: var(--ink); }
+
+    .about-facts {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+    .fact {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.1rem 0;
+      border-bottom: 1px solid var(--border);
+      gap: 16px;
+    }
+    .fact:first-child { border-top: 1px solid var(--border); }
+    .fact-key {
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    .fact-val {
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: var(--ink);
+      text-align: right;
+    }
+
+    /* ── CONTACT ── */
+    .contact-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: center;
+    }
+    .contact-text h2 {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(2rem, 3.5vw, 2.8rem);
+      font-weight: 400;
+      line-height: 1.2;
+      margin-bottom: 1rem;
+    }
+    .contact-text h2 em { font-style: italic; color: var(--purple); }
+    .contact-text p {
+      font-size: 0.95rem;
+      color: var(--muted);
+      line-height: 1.8;
+      max-width: 42ch;
+    }
+    .contact-links {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .contact-link {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.1rem 1.4rem;
+      border: 1.5px solid var(--border);
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: border-color 0.15s, background 0.15s;
+    }
+    .contact-link:hover { border-color: var(--purple); background: var(--purple-light); }
+    .contact-link .arrow { color: var(--purple); font-size: 1rem; }
+
+    /* ── FOOTER ── */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 2rem 5%;
+      max-width: 1300px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.82rem;
+      color: var(--muted);
+    }
+
+    /* ── MOBILE ── */
+    @media (max-width: 900px) {
+      .hero {
+        flex-direction: column-reverse;
+        gap: 3rem;
+        padding: 3rem 5% 4rem;
+      }
+      .hero-image { flex: none; width: 100%; max-width: 480px; margin: 0 auto; }
+      .hero-image::before { display: none; }
+      .hero-image img { height: 420px; }
+      .hero-content { text-align: left; }
+      nav { position: relative; }
+
+      .project, .about-grid, .contact-inner {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+      }
+      .project.reverse { direction: ltr; }
+      .project-meta .num { font-size: 2.5rem; }
+
+      footer { flex-direction: column; gap: 8px; text-align: center; }
+    }
+
+    @media (max-width: 600px) {
+      nav {
+        flex-direction: column;
+        gap: 1.2rem;
+        padding: 1.2rem 5%;
+        align-items: flex-start;
+      }
+      .nav-right { flex-direction: column; align-items: flex-start; gap: 1rem; width: 100%; }
+      .nav-links { gap: 1.2rem; }
+      .btn-resume { width: 100%; text-align: center; }
+      .cta-group { flex-direction: column; }
+      .btn { justify-content: center; }
+      .section { padding: 4rem 5%; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="topnav">
+  <div class="logo">
+    <span class="l1">LAL</span><span class="l2">KISHEN</span>
+  </div>
+  <div class="nav-right">
+    <ul class="nav-links">
+      <li><a href="#home" class="active">Home</a></li>
+      <li><a href="#projects">Portfolio</a></li>
+      <li><a href="#about">About</a></li>
+    </ul>
+    <a href="mailto:mlalkishen@gmail.com" class="btn-resume">Get In Touch</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-image">
+    <img src="images/lalkishen.jpeg" alt="Lalkishen M"
+         onerror="this.style.display='none'">
+  </div>
+  <div class="hero-content">
+    <h1>Hello, I'm Lalkishen — a <em>Product Manager</em> & Agentic AI Specialist</h1>
+    <div class="status">
+      <div class="status-dot"></div>
+      Status: <span>Building at ICICI Bank</span>
+    </div>
+    <div class="cta-group">
+      <a href="#projects" class="btn btn-primary">See My Work</a>
+      <a href="https://www.linkedin.com/in/lalkishen/" target="_blank" rel="noopener" class="btn btn-outline">LinkedIn</a>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<div class="section-border">
+  <div class="section" id="projects">
+    <p class="eyebrow">Selected Work</p>
+    <h2 class="section-heading">What I've Built</h2>
+
+    <div class="project">
+      <div class="project-img">
+        <img src="images/project-banner.png" alt="AI Research Assistant"
+             onerror="this.parentElement.innerHTML='🤖'">
+      </div>
+      <div class="project-meta">
+        <div class="num">01</div>
+        <div class="type">Agentic AI</div>
+        <h3>AI Research Assistant</h3>
+        <p>Autonomous research agent that turns complex questions into evidence-backed reports. Built with LangChain and Gemini — uses ReAct reasoning, composite memory, and multi-hop retrieval to identify evidence gaps and re-query automatically.</p>
+        <div class="project-tags">
+          <span class="tag">LangChain</span>
+          <span class="tag">Gemini</span>
+          <span class="tag">ReAct</span>
+          <span class="tag">Vector Memory</span>
+          <span class="tag">RAG</span>
+        </div>
+        <a class="project-cta" href="https://github.com/Lalkishen-m/ai_research_assistant" target="_blank" rel="noopener">
+          View on GitHub →
+        </a>
+      </div>
+    </div>
+
+    <div class="project reverse">
+      <div class="project-img">💳</div>
+      <div class="project-meta">
+        <div class="num">02</div>
+        <div class="type">Product · Fintech</div>
+        <h3>Payment Systems Case Study</h3>
+        <p>API-driven integration work across ICICI Bank's payment products — owning the product lifecycle from discovery to delivery. Details coming soon.</p>
+        <div class="project-tags">
+          <span class="tag">Payments</span>
+          <span class="tag">API Integration</span>
+          <span class="tag">Banking</span>
+        </div>
+        <span class="project-cta dim">Coming Soon</span>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ABOUT -->
+<div class="section-border">
+  <div class="section" id="about">
+    <p class="eyebrow">About Me</p>
+    <h2 class="section-heading">Product × AI</h2>
+    <div class="about-grid">
+      <div class="about-text">
+        <p>I'm a product manager with <strong>3+ years</strong> building end-to-end product solutions in banking and fintech. At <strong>ICICI Bank</strong> I work on payment systems and API-driven integrations. Before that, I owned the full lending product stack at <strong>Tata Capital</strong>.</p>
+        <p>I'm deeply interested in how <strong>Generative and Agentic AI</strong> reshapes financial products — so I build to find out. My AI Research Assistant is the first of several experiments.</p>
+        <p>Structured and data-driven in problem-solving, with strong cross-functional execution across engineering, design, and business teams.</p>
+      </div>
+      <div class="about-facts">
+        <div class="fact">
+          <span class="fact-key">Current Role</span>
+          <span class="fact-val">Product Manager, ICICI Bank</span>
+        </div>
+        <div class="fact">
+          <span class="fact-key">Education</span>
+          <span class="fact-val">MBA — IIM Kashipur</span>
+        </div>
+        <div class="fact">
+          <span class="fact-key">Specialisation</span>
+          <span class="fact-val">Fintech · Agentic AI</span>
+        </div>
+        <div class="fact">
+          <span class="fact-key">Experience</span>
+          <span class="fact-val">3+ Years</span>
+        </div>
+        <div class="fact">
+          <span class="fact-key">Location</span>
+          <span class="fact-val">Mumbai, India</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CONTACT -->
+<div class="section-border" style="background:#fafafa;">
+  <div class="section" id="contact">
+    <div class="contact-inner">
+      <div class="contact-text">
+        <h2>Let's talk <em>product.</em></h2>
+        <p>Open to conversations about product strategy, AI applications in fintech, and interesting problems worth solving.</p>
+      </div>
+      <div class="contact-links">
+        <a class="contact-link" href="mailto:mlalkishen@gmail.com">
+          <span>mlalkishen@gmail.com</span>
+          <span class="arrow">→</span>
+        </a>
+        <a class="contact-link" href="https://www.linkedin.com/in/lalkishen/" target="_blank" rel="noopener">
+          <span>LinkedIn Profile</span>
+          <span class="arrow">→</span>
+        </a>
+        <a class="contact-link" href="https://github.com/Lalkishen-m" target="_blank" rel="noopener">
+          <span>GitHub</span>
+          <span class="arrow">→</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <span>© 2026 Lalkishen M</span>
+  <span>Product Manager · Mumbai, India</span>
+</footer>
+
+<script>
+  const nav = document.getElementById('topnav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 10);
+  });
+  document.querySelectorAll('.nav-links a').forEach(a => {
+    a.addEventListener('click', () => {
+      document.querySelectorAll('.nav-links a').forEach(x => x.classList.remove('active'));
+      a.classList.add('active');
+    });
+  });
+</script>
+
+</body>
+</html>
